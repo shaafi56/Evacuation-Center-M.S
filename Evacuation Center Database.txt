@@ -1,0 +1,59 @@
+create database Evacuation_Center
+use Evacuation_Center
+
+create table Calamity_Type 
+(
+id int not null primary key identity,
+Calamity_name nvarchar(50) not null
+);
+
+create table Barangay_Info
+(
+id int not null primary key identity,
+Barangay_name nvarchar(50) not null
+);
+
+create table Evacuation_Center 
+(
+id int not null primary key identity,
+Center_name nvarchar(50) not null,
+Address nvarchar(50) not null,
+Content_info int not null
+);
+
+
+create table Add_Evacuees 
+(
+id int not null primary key identity,
+First_name nvarchar(50) not null,
+middel_name nvarchar(50) not null,
+Last_name nvarchar(50) not null,
+Content_info int not null,
+Age int not null,
+Gender varchar(50) not null,
+Barangay nvarchar(50) not null,
+Address nvarchar(50) not null,
+Head_of_family nvarchar(50) not null,
+Center_name nvarchar(50) not null,
+);
+
+create table LGU_Settings
+(
+id int not null primary key identity,
+City nvarchar(50) not null,
+Content_info int not null,
+Email varchar(50) not null unique,
+Website nvarchar(50) not null,
+Facebook nvarchar(50) not null,
+);
+
+create table Add_users
+(
+id int not null primary key identity,
+Full_name nvarchar(50) not null,
+Designation nvarchar(50) not null,
+Content_info int not null,
+Account_Category varchar(50) not null unique,
+User_name nvarchar(50) not null,
+Password nvarchar(50) not null,
+);
